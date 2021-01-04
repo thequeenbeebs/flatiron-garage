@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :cars
+  resources :mechanics
+  resources :owners
+  resources :parts
+  resources :service_records
+  resources :services
 end
