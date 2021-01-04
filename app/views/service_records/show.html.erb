@@ -1,0 +1,26 @@
+<h2>Service Record</h2>
+
+<h3>Date of Service:</h3>
+<%= @service_record.date_of_service %>
+
+<h3>Vehicle:</h3>
+<%= @service_record.car.make %> <%= @service_record.car.model %>
+
+<h3>Owned By:</h3>
+<%= @service_record.car.owner.name %>
+
+<h3>Mechanic:</h3>
+<%= @service_record.mechanic.name %>
+
+<h3>Labor Hours:</h3>
+<%= @service_record.labor_hours %>
+
+<h3>Parts:</h3>
+<ul>
+    <% @service_record.parts.each do |part| %>
+        <li><%= part.description %> - $<%= part.price %></li>
+    <% end %>
+</ul>
+
+<h3>Note:</h3>
+<%= @service_record.note %>

@@ -1,0 +1,20 @@
+<h2><%= @mechanic.name %></h2>
+
+<h3>Years Experience:</h3>
+<%= @mechanic.years_experience %>
+
+<h3>Hire Date:</h3>
+<%= @mechanic.hire_date %>
+
+<h3>Hourly Rate:</h3>
+<%= @mechanic.hourly_price %>
+
+<h3>Service Records:</h3>
+<ul>
+    <% @mechanic.service_records.each do |service_record| %>
+        <li><%= link_to service_record.date_of_service, service_record_path(service_record) %> - <%= service_record.service.service_description %></li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit Mechanic", edit_mechanic_path(@mechanic) %>
+<%= link_to "Delete Mechanic", @mechanic, method: :destroy %>

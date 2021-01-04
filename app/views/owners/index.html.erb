@@ -1,0 +1,7 @@
+<h2>Customers</h2>
+
+<% @owners.each do |owner| %>
+    <p>
+        <%= link_to owner.name, owner_path(owner) %>
+    </p>
+<% end %>

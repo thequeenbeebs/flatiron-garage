@@ -1,0 +1,26 @@
+<h2>Service Records</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Vehicle</th>
+            <th>Vehicle Owner</th>
+            <th>Service</th>
+            <th>Mechanic</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @service_records.each do |service_record| %>
+            <tr>
+                <td><%= service_record.date_of_service %></td>
+                <td><%= service_record.car.make %> <%= service_record.car.model %></td>
+                <td><%= service_record.car.owner.name %></td>
+                <td><%= service_record.service.service_description %></td>
+                <td><%= service_record.mechanic.name %></td>
+                <td><%= link_to "View Service Record", service_record_path(service_record) %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

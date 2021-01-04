@@ -1,0 +1,9 @@
+<h2>Mechanics</h2>
+
+<% @mechanics.each do |mechanic| %>
+    <p>
+        <%= link_to mechanic.name, mechanic_path(mechanic) %>
+    </p>
+<% end %>
+
+<%= link_to "Add Mechanic", new_mechanic_path %>

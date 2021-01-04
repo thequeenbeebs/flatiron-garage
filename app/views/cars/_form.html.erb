@@ -1,0 +1,21 @@
+<%= form_for @car do |f| %>
+    <p>
+       <%= f.label :make %><br>
+       <%= f.text_field :make %> 
+    </p>
+    <p>
+       <%= f.label :model %><br>
+       <%= f.text_field :model %> 
+    </p>
+    <p>
+       <%= f.label :year %><br>
+       <%= f.text_field :year %> 
+    </p>
+    <p>
+       <%= f.label :owner_id %><br>
+       <%= f.collection_select :owner_id, Owner.all, :id, :name %> 
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

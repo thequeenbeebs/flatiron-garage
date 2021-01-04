@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FlatironGarage</title>
+    <title>Flatiron Garage</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <h1>Flatiron Garage</h1>
+    <nav>
+      <%= link_to "Mechanics", mechanics_path %>
+      <%= link_to "Services", services_path %>
+      <%= link_to "Service Records", service_records_path %>
+      <%= link_to "Customers", owners_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>
