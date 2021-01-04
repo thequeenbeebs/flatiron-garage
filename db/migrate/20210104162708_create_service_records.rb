@@ -4,7 +4,7 @@ class CreateServiceRecords < ActiveRecord::Migration[6.0]
       t.integer :car_id
       t.integer :service_id
       t.integer :mechanic_id
-      t.string :date
+      t.string :date_of_service
       t.integer :labor_hours
       t.string :note
       t.timestamps

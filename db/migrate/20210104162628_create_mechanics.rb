@@ -3,6 +3,7 @@ class CreateMechanics < ActiveRecord::Migration[6.0]
     create_table :mechanics do |t|
       t.string :name
       t.integer :years_experience
+      t.string :hire_date
       t.integer :hourly_price
       t.timestamps
     end
