@@ -1,0 +1,24 @@
+<h2>Services</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Labor Estimate</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @services.each do |service| %>
+            <tr>
+                <td><%= service.service_description %></td>
+                <td><%= service.labor_estimate %></td>
+                <td><%= link_to "Edit Service", edit_service_path(service) %></td>
+                <td><%= link_to "Delete Service", service, method: :delete %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to "New Service", new_service_path %>

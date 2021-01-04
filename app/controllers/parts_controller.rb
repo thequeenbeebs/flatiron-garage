@@ -25,8 +25,9 @@ class PartsController < ApplicationController
 
     def destroy
         @part = Part.find(params[:id])
+        @service_record = @part.service_record
         @part.destroy
-        redirect_to parts_path
+        redirect_to service_record_path(@service_record)
     end
 
     private

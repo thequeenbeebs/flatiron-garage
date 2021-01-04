@@ -1,0 +1,29 @@
+<%= form_for @service_record do |f| %>
+    <p>
+        <%= f.label :date_of_service %><br>
+        <%= f.text_field :date_of_service %>
+    </p>
+    <p>
+        <%= f.label :car_id %><br>
+        <%= f.collection_select :car_id, Car.all, :id, :model %>
+    </p>
+    <p>
+        <%= f.label :service_id %><br>
+        <%= f.collection_select :service_id, Service.all, :id, :service_description %>
+    </p>
+    <p>
+        <%= f.label :mechanic_id %><br>
+        <%= f.collection_select :mechanic_id, Mechanic.all, :id, :name %>
+    </p>
+    <p>
+        <%= f.label :labor_hours %><br>
+        <%= f.number_field :labor_hours %>
+    </p>
+    <p>
+        <%= f.label :note %><br>
+        <%= f.text_field :note %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

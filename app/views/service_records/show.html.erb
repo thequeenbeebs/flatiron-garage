@@ -4,13 +4,16 @@
 <%= @service_record.date_of_service %>
 
 <h3>Vehicle:</h3>
-<%= @service_record.car.make %> <%= @service_record.car.model %>
+<%= link_to "#{@service_record.car.make} #{@service_record.car.model}", car_path(@service_record.car)  %>
 
 <h3>Owned By:</h3>
-<%= @service_record.car.owner.name %>
+<%= link_to @service_record.car.owner.name, owner_path(@service_record.car.owner) %>
 
 <h3>Mechanic:</h3>
-<%= @service_record.mechanic.name %>
+<%= link_to @service_record.mechanic.name, mechanic_path(@service_record.mechanic) %>
+
+<h3>Service Description:</h3>
+<%= @service_record.service.service_description %>
 
 <h3>Labor Hours:</h3>
 <%= @service_record.labor_hours %>
@@ -18,9 +21,13 @@
 <h3>Parts:</h3>
 <ul>
     <% @service_record.parts.each do |part| %>
-        <li><%= part.description %> - $<%= part.price %></li>
+        <li><%= link_to part.description, part_path(part) %> - $<%= part.price %></li>
     <% end %>
 </ul>
 
 <h3>Note:</h3>
-<%= @service_record.note %>
+<p><%= @service_record.note %></p>
+
+<%= link_to "Add a Part", new_part_path %>
+<%= link_to "Edit Service Record", edit_service_record_path(@service_record) %>
+<%= link_to "Delete Service Record", @service_record, method: :delete %>

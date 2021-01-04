@@ -3,10 +3,6 @@ class ServicesController < ApplicationController
         @services = Service.all
     end
 
-    def show
-        @service = Service.find(params[:id])
-    end
-
     def new
         @service = Service.new
     end
@@ -14,7 +10,7 @@ class ServicesController < ApplicationController
     def create
         @service = Service.new
         @service.create(service_params)
-        redirect_to service_path(@service)
+        redirect_to services_path
     end
 
     def edit
@@ -24,7 +20,7 @@ class ServicesController < ApplicationController
     def update
         @service = Service.find(params[:id])
         @service.update(service_params)
-        redirect_to service_path(@service)
+        redirect_to services_path
     end
 
     def destroy
