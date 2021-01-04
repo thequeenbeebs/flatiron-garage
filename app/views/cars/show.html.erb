@@ -1,0 +1,23 @@
+<h2>Vehicle</h2>
+
+<h3>Owner:</h3>
+<%= link_to @car.owner.name, owner_path(@car.owner) %>
+
+<h3>Make:</h3>
+<%= @car.make %>
+
+<h3>Model:</h3>
+<%= @car.model %>
+
+<h3>Year:</h3>
+<%= @car.year %>
+
+<h3>Service Records:</h3>
+<ul>
+    <%= @car.service_records.each do |service_record| %>
+        <li><%= link_to service_record.date_of_service, service_record_path(service_record) %> - <%= service_record.service.service_description %></li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit Vehicle", edit_car_path(@car) %>
+<%= link_to "Delete Vehicle", @car, method: :destroy %> 

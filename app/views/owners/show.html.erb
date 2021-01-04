@@ -1,0 +1,21 @@
+<h2>Customer</h2>
+
+<h3>Name:</h3>
+<%= @owner.name %>
+
+<h3>E-mail Address:</h3>
+<%= @owner.email %>
+
+<h3>Mailing Address:</h3>
+<%= @owner.street_address %><br>
+<%= @owner.city %>, <%= @owner.state %> <%= @owner.zip_code %>
+
+<h3>Vehicles:</h3>
+<ul>
+    <% @owner.cars.each do |car| %>
+        <li><%= link_to car.model, car_path(car)%></li>
+    <% end %>
+</ul>
+
+<%= link_to "Edit Customer", edit_owner_path(@owner) %>
+<%= link_to "Delete Customer", @owner, method: :destroy %>

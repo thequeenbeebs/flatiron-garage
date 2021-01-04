@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :cars
+  resources :cars, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :mechanics
   resources :owners
-  resources :parts
+  resources :cars, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :service_records
   resources :services
+  root "cars#home"
 end
