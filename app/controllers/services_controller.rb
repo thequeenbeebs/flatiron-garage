@@ -11,7 +11,7 @@ class ServicesController < ApplicationController
         @service = Service.new(service_params)
         if @service.valid?
             @service.save
-            redirect_to service_path(@service)
+            redirect_to services_path
         else
             flash[:errors] = @service.errors.full_messages
             render :new
