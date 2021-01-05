@@ -13,17 +13,28 @@
     <h1>Flatiron Garage</h1>
     <nav>
       <% if current_user %>
-        <%= link_to "Mechanics", mechanics_path %>
-        <%= link_to "Services", services_path %>
-        <%= link_to "Service Records", service_records_path %>
-        <%= link_to "Customers", owners_path %>
-        <%= link_to "Log Out", logout_path %>
+        <div class="left-nav">
+          <%= link_to "Mechanics", mechanics_path %>
+          <%= link_to "Services", services_path %>
+          <%= link_to "Service Records", service_records_path %>
+          <%= link_to "Customers", owners_path %><br>
+        </div>
+        <div class="right-nav">
+          <%= link_to "View Profile", user_path(current_user) %>
+          <%= link_to "Log Out", logout_path %>
+        </div>
       <% else %>
         <%= link_to "Log In", login_path %>
         <%= link_to "Sign Up", signup_path %>
       <% end %>
 
     </nav>
+
+    <br>
+    <br>
     <%= yield %>
   </body>
+
+  <br>
+  <br>
 </html>

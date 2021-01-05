@@ -9,8 +9,12 @@
 <h3>Price:</h3>
 $<%= @part.price %>
 
-<p>
-    <%= link_to "Edit Part", edit_part_path(@part) %>
-    <%= link_to "Delete Part", @part, method: :delete %>
-    <%= link_to "Back to Service Record", service_record_path(@part.service_record)%>
-</p>
+<br>
+
+<div class="footer">
+    <p>
+        <%= link_to "Edit Part", edit_service_record_part_path(@part) %>
+        <%= link_to "Delete Part", @part, method: :delete %>
+        <%= link_to "Back to Service Record", service_record_path(@part.service_record)%>
+    </p>
+</div>

@@ -7,7 +7,7 @@ class CarsController < ApplicationController
     end
 
     def new
-        @car = Car.new
+        @car = Car.new(owner_id: params[:owner_id])
     end
 
     def create

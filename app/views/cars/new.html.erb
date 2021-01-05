@@ -1,13 +1,13 @@
 <h2>New Vehicle</h2>
 
-<div id="error_explanations">
 <% if flash[:errors] %>
 <% flash[:errors].each do |error| %>
+  <div id="error_explanation">
   <li style="color: orange">
   <%= error %>
   </li>
+  </div>
 <% end %>
 <% end %>
-</div>
 
 <%= render 'form' %>

@@ -12,8 +12,7 @@
        <%= f.text_field :year %> 
     </p>
     <p>
-       <%= f.label :owner_id %><br>
-       <%= f.collection_select :owner_id, Owner.all, :id, :name %> 
+       <%= f.hidden_field :owner_id %><br>
     </p>
     <p>
         <%= f.submit %>

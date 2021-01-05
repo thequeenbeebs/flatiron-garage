@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.id != session[:user_id]
+      redirect_to root_path
+    end
   end
 
   def new 
@@ -13,7 +16,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to root_path
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to signup_path
@@ -22,6 +25,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    if @user.id != session[:user_id]
+      redirect_to root_path
+    end
   end
 
   def update

@@ -7,7 +7,7 @@ class PartsController < ApplicationController
     end
 
     def new
-        @part = Part.new
+        @part = Part.new(service_record_id: params[:service_record_id])
     end
 
     def create
@@ -18,6 +18,7 @@ class PartsController < ApplicationController
         else
             flash[:errors] = @part.errors.full_messages
             render :new
+        end
     end
 
     def edit
