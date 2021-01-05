@@ -12,9 +12,14 @@ class MechanicsController < ApplicationController
     end
 
     def create
-        @mechanic = Mechanic.new
-        @mechanic.create(mechanic_params)
-        redirect_to mechanic_path(@mechanic)
+        @mechanic = Mechanic.new(mechanic_params)
+        if @mechanic.valid?
+            @mechanic.save
+            redirect_to mechanic_path(@mechanic)
+        else
+            flash[:errors] = @mechanic.errors.full_messages
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +28,12 @@ class MechanicsController < ApplicationController
 
     def update
         @mechanic = Mechanic.find(params[:id])
-        @mechanic.update(mechanic_params)
-        redirect_to mechanic_path(@mechanic)
+        if @mechanic.update(mechanic_params)
+            redirect_to mechanic_path(@mechanic)
+        else
+            flash[:errors] = @mechanic.errors.full_messages
+            render :edit
+        end
     end
 
     def destroy

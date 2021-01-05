@@ -8,8 +8,9 @@ class PartsController < ApplicationController
     end
 
     def create
-        @part = Part.new
-        @part.create(part_params)
+        @part = Part.new(part_params)
+        if @part.valid
+            @part.save
         redirect_to part_path(@part)
     end
 
@@ -19,8 +20,12 @@ class PartsController < ApplicationController
 
     def update
         @part = Part.find(params[:id])
-        @part.update(part_params)
-        redirect_to part_path(@part)
+        if @part.update(part_params)
+            redirect_to part_path(@part)
+        else
+            flash[:errors] = @part.errors.full_messages
+            render :edit
+        end
     end
 
     def destroy
