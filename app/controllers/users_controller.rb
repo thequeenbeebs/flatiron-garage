@@ -12,10 +12,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       flash[:errors] = @user.errors.full_messages
-      render :new
+      redirect_to signup_path
     end
   end
 
