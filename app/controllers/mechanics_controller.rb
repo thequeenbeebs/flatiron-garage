@@ -1,4 +1,7 @@
 class MechanicsController < ApplicationController
+
+    before_action :require_login
+
     def index
         @mechanics = Mechanic.all
     end

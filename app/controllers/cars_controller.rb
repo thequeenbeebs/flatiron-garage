@@ -1,5 +1,7 @@
 class CarsController < ApplicationController
-    
+   
+    before_action :require_login
+
     def show
         @car = Car.find(params[:id])
     end

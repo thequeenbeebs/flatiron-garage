@@ -1,4 +1,7 @@
 class ServicesController < ApplicationController
+    
+    before_action :require_login
+    
     def index
         @services = Service.all
     end

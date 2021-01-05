@@ -1,4 +1,7 @@
 class PartsController < ApplicationController
+    
+    before_action :require_login
+    
     def show
         @part = Part.find(params[:id])
     end

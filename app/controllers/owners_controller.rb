@@ -1,4 +1,7 @@
 class OwnersController < ApplicationController
+    
+    before_action :require_login
+    
     def index
         @owners = Owner.all
     end
