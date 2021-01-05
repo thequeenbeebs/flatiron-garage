@@ -28,6 +28,13 @@
 <h3>Note:</h3>
 <p><%= @service_record.note %></p>
 
-<%= link_to "Add a Part", new_part_path %>
-<%= link_to "Edit Service Record", edit_service_record_path(@service_record) %>
-<%= link_to "Delete Service Record", @service_record, method: :delete %>
+<h3>Total Cost:</h3>
+<p>$<%= @service_record.total_cost %></p>
+
+<br>
+
+<div class="footer">
+    <%= link_to "Add a Part", new_service_record_part_path(@service_record) %>
+    <%= link_to "Edit Service Record", edit_service_record_path(@service_record) %>
+    <%= link_to "Delete Service Record", @service_record, method: :delete %>
+</div>

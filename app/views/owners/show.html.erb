@@ -17,6 +17,10 @@
     <% end %>
 </ul>
 
-<%= link_to "Add a Vehicle", new_car_path %><br>
-<%= link_to "Edit Customer", edit_owner_path(@owner) %><br>
-<%= link_to "Delete Customer", @owner, method: :delete %>
+<br>
+
+<div class='footer'>
+    <%= link_to "Add a Vehicle", new_owner_car_path(@owner) %>
+    <%= link_to "Edit Customer", edit_owner_path(@owner) %>
+    <%= link_to "Delete Customer", @owner, method: :delete %>
+</div>

@@ -1,7 +1,6 @@
 <%= form_for @part do |f| %>
     <p>
-        <%= f.label :service_record_id %><br>
-        <%= f.collection_select :service_record_id, ServiceRecord.all, :id, :date_of_service %>
+        <%= f.hidden_field :service_record_id %>
     </p>
     <p>
         <%= f.label :number %><br>

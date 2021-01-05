@@ -7,7 +7,7 @@ class PartsController < ApplicationController
     end
 
     def new
-        @part = Part.new
+        @part = Part.new(service_record_id: params[:service_record_id])
     end
 
     def create
