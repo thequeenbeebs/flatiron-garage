@@ -12,9 +12,14 @@ class ServiceRecordsController < ApplicationController
     end
 
     def create
-        @service_record = ServiceRecord.new
-        @service_record.create(service_record_params)
-        redirect_to service_record_path(@service_record)
+        @service_record = ServiceRecord.new(service_record_params)
+        if @service_record.valid?
+            @service_record.save
+            redirect_to service_record_path(@service_record)
+        else
+            flash[:errors] = @service_record.errors.full_messages
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +28,12 @@ class ServiceRecordsController < ApplicationController
 
     def update
         @service_record = ServiceRecord.find(params[:id])
-        @service_record.update(service_record_params)
-        redirect_to service_record_path(@service_record)
+        if @service_record.update(service_record_params)
+            redirect_to service_record_path(@service_record)
+        else
+            flash[:errors] = @service_record.errors.full_messages
+            render :edit
+        end
     end
 
     def destroy

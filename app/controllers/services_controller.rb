@@ -12,9 +12,14 @@ class ServicesController < ApplicationController
     end
 
     def create
-        @service = Service.new
-        @service.create(service_params)
-        redirect_to service_path(@service)
+        @service = Service.new(service_params)
+        if @service.valid?
+            @service.save
+            redirect_to service_path(@service)
+        else
+            flash[:errors] = @service.errors.full_messages
+            render :new
+        end
     end
 
     def edit
@@ -23,8 +28,12 @@ class ServicesController < ApplicationController
 
     def update
         @service = Service.find(params[:id])
-        @service.update(service_params)
-        redirect_to service_path(@service)
+        if @service.update(service_params)
+            redirect_to service_path(@service)
+        else
+            flash[:errors] = @service.errors.full_messages
+            render :edit
+        end
     end
 
     def destroy

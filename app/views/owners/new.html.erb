@@ -1,3 +1,13 @@
 <h2>New Customer</h2>
 
+<div id="error_explanations">
+<% if flash[:errors] %>
+<% flash[:errors].each do |error| %>
+  <li style="color: orange">
+  <%= error %>
+  </li>
+<% end %>
+<% end %>
+</div>
+
 <%= render 'form' %>
