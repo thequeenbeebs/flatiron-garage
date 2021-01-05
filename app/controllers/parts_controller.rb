@@ -9,9 +9,12 @@ class PartsController < ApplicationController
 
     def create
         @part = Part.new(part_params)
-        if @part.valid
+        if @part.valid?
             @part.save
-        redirect_to part_path(@part)
+            redirect_to part_path(@part)
+        else
+            flash[:errors] = @part.errors.full_messages
+            render :new
     end
 
     def edit
