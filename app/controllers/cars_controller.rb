@@ -1,7 +1,5 @@
 class CarsController < ApplicationController
-    def home
-    end
-
+    
     def show
         @car = Car.find(params[:id])
     end

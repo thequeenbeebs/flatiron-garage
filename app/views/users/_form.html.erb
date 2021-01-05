@@ -1,0 +1,28 @@
+
+<div id = "error explanations">
+<% if flash[:errors]%>
+<% flash[:errors].each do |error|%>
+  <li style = "color: orange">
+  <%= error %>
+  </li>
+  <% end %>
+  <% end %>
+</div>
+
+
+<%= form_for @user do |f|%>
+
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %>
+  </p>
+  <p>
+  <%= f.label :password_confirmation %><br>
+  <%= f.password_field :password_confirmation %>
+  </p>
+  <%= f.submit %>
+  <% end %>
