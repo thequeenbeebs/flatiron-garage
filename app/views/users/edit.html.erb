@@ -1,3 +1,9 @@
 <h2> Edit User </h2>
 
+<% if flash[:errors] %>
+<li style = "color:orange">
+<%= flash[:errors]%>
+</li>
+<% end %>
+
 <%= render "form" %>

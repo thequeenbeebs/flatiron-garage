@@ -1,13 +1,9 @@
 <h2>Edit Service</h2>
 
 <% if flash[:errors] %>
-<% flash[:errors].each do |error| %>
-  <div id="error_explanation">
-  <li style="color: orange">
-  <%= error %>
-  </li>
-  </div>
-<% end %>
+<li style = "color:orange">
+<%= flash[:errors]%>
+</li>
 <% end %>
 
 <%= render 'form' %>

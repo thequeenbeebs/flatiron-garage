@@ -18,6 +18,7 @@ class PartsController < ApplicationController
         else
             flash[:errors] = @part.errors.full_messages
             render :new
+        end
     end
 
     def edit
