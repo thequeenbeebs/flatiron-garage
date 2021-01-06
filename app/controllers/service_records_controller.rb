@@ -16,10 +16,23 @@ class ServiceRecordsController < ApplicationController
 
     def create
         @service_record = ServiceRecord.new(service_record_params)
+        @owner = @service_record.car.owner
         if @service_record.valid?
             @service_record.save
-            OwnerInvoiceMailer.with(owner: @service_record.car.owner).invoice_email.deliver_now
-            redirect_to service_record_path(@service_record)
+            
+            respond_to do |format|
+                if @service_record.save
+                  # Tell the Mailer to send an invoice email after save
+                  OwnerInvoiceMailer.with(owner: @owner).invoice_email.deliver_now
+          
+                  format.html { redirect_to service_record_path(@service_record, notice: 'Invoice was successfully sent') }
+                  format.json { render json: @owner, status: :created, location: @owner }
+                else
+                  format.html { render action: 'new' }
+                  format.json { render json: @owner.errors, status: :unprocessable_entity }
+                end
+              end
+            
         else
             flash[:errors] = @service_record.errors.full_messages
             render :new
