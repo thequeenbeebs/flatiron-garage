@@ -18,6 +18,7 @@ class ServiceRecordsController < ApplicationController
         @service_record = ServiceRecord.new(service_record_params)
         if @service_record.valid?
             @service_record.save
+            OwnerInvoiceMailer.with(owner: @service_record.car.owner).invoice_email.deliver_now
             redirect_to service_record_path(@service_record)
         else
             flash[:errors] = @service_record.errors.full_messages
