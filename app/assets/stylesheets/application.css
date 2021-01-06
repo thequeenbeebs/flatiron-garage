@@ -1,14 +1,8 @@
-/* TO ADD: 
-    - color
-    - opacity
-    - background-image
-*/
- 
- body {
+body {
      font-family: Georgia;
      margin-left: 20px;
-     background-color: yellow;
-     background-image: url('../images/garage1.jpeg');
+     background-image: url('https://i.postimg.cc/Fz1F290t/garage1.jpg');
+     background-size: cover;
  }
 
  h1, h2, .footer {
@@ -20,10 +14,15 @@
      text-align: center;
      border: 3px solid black;
      margin-bottom: 10px;
+     background-color: white;
+     margin-left: 20px;
+     margin-right: 20px;
+     opacity: 0.8;
  }
 
  h2 {
      font-size: 40px;
+     margin-top: 10px;
  }
 
  .nav {
@@ -68,5 +67,15 @@
  .page-data {
      background-color: white;
      padding: 20px;
-     margin: 20px;
+     margin-left: 20px;
+     margin-right: 20px;
+     margin-top: 50px;
+     opacity: 0.8;
+     border: 3px solid black;
     }
+
+#welcome {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}

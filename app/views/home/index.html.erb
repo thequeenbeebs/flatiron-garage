@@ -1,1 +1,7 @@
-
+<div id="welcome">  
+    <% if current_user %>
+        <p>Welcome, <%= current_user.username %>!</p>
+    <% else %>
+        <p>Welcome to Flatiron Garage! Please log in.</p>
+    <% end %>
+</div>
