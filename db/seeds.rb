@@ -14,15 +14,15 @@ Mechanic.destroy_all
 Part.destroy_all
 
 
-ownr1 = Owner.create(name: "George Winston", email: "gwinston@gwinston.com", street_address: "123 Stone Place", city: "Baltimore", state: "MD", zip_code: 21201)
-ownr2 = Owner.create(name: "Lyle Lovett", email: "llovett@llovett.com", street_address: "345 Blades Avenue", city: "Ellicott City", state: "MD", zip_code: 21401)
-ownr3 = Owner.create(name: "Eddie Murphy", email: "emurphy@emurphy.com", street_address: "1343 Elligant Place", city: "Laurel", state: "MD", zip_code: 20707)
-ownr4 = Owner.create(name: "Dolly Parton", email: "dparton@dparton.com", street_address: "402 Falls Road", city: "Baltimore", state: "MD", zip_code: 21211)
-ownr5 = Owner.create(name: "Scott Voorhees", email: "svoorhees@svoorhees.com", street_address: "5123 Mayo Road", city: "Edgewater", state: "MD", zip_code: 21037)
+ownr1 = Owner.create(name: "George Winston", email: "gwinston@gwinston.com", street_address: "123 Stone Place", city: "Baltimore", state: "MD", zip_code: 21201, phone_number: "123-456-7890")
+ownr2 = Owner.create(name: "Lyle Lovett", email: "llovett@llovett.com", street_address: "345 Blades Avenue", city: "Ellicott City", state: "MD", zip_code: 21401, phone_number: "713-867-5309")
+ownr3 = Owner.create(name: "Eddie Murphy", email: "emurphy@emurphy.com", street_address: "1343 Elligant Place", city: "Laurel", state: "MD", zip_code: 20707, phone_number: "713-972-1964")
+ownr4 = Owner.create(name: "Dolly Parton", email: "dparton@dparton.com", street_address: "402 Falls Road", city: "Baltimore", state: "MD", zip_code: 21211, phone_number: "281-546-3249")
+ownr5 = Owner.create(name: "Scott Voorhees", email: "svoorhees@svoorhees.com", street_address: "5123 Mayo Road", city: "Edgewater", state: "MD", zip_code: 21037, phone_number: "281-630-8839")
 
-car1 = Car.create(year: 2018, make: "Chevrolet", model: "Suburban", owner_id: ownr1.id)
-car2 = Car.create(year: 1979, make: "Ford", model: "Pinto", owner_id: ownr2.id)
-car3 = Car.create(year: 2020, make: "Ferrari", model: "Portofino", owner_id: ownr3.id)
+car1 = Car.create(year: 2018, make: "Chevrolet", model: "Suburban", owner_id: ownr1.id, in_garage: true)
+car2 = Car.create(year: 1979, make: "Ford", model: "Pinto", owner_id: ownr2.id, in_garage: true)
+car3 = Car.create(year: 2020, make: "Ferrari", model: "Portofino", owner_id: ownr3.id, in_garage: true)
 car4 = Car.create(year: 2019, make: "Cadillac", model: "XT4", owner_id: ownr4.id)
 car5 = Car.create(year: 2016, make: "Hyundai", model: "Veloster", owner_id: ownr5.id)
 car6 = Car.create(year: 1999, make: "Ford", model: "F150", owner_id: ownr1.id)
@@ -55,4 +55,16 @@ srvrcd4 = ServiceRecord.create(car_id: car2.id, service_id: srv4.id, mechanic_id
 part4 = Part.create(service_record_id: srvrcd4.id, number: 215798, description: "Manual Transmission Filter", price: 25)
 srvrcd5 = ServiceRecord.create(car_id: car3.id, service_id: srv7.id, mechanic_id: mech3.id, date_of_service: "07/22/2020", labor_hours: 4, note: "Nice car - Radiator had a hole in it")
 part5 = Part.create(service_record_id: srvrcd5.id, number: 19208, description: "Ferrari Radiator", price: 300)
+
+#create owners
+10.times do 
+    name = Faker::Name.name
+    email = Faker::Internet.email
+    phone_number = Faker::PhoneNumber.phone_number
+    street_address = Faker::Address.street_address
+    city = Faker::Address.city
+    state = Faker::Address.state
+    zip_code = Faker::Address.zip_code
+    owner = Owner.create(name: name, email: email, phone_number: phone_number, street_address: street_address, city: city, state: state, zip_code: zip_code)
+end
 

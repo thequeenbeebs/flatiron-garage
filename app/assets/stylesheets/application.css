@@ -1,3 +1,5 @@
+
+
 body {
      font-family: Georgia;
      margin-left: 20px;
@@ -27,7 +29,7 @@ body {
 
  .nav {
      text-align: center;
-     margin: 20px;
+     margin: 10px 20px;
  }
 
  .left-nav {
@@ -38,17 +40,21 @@ body {
      float: right;
  }
 
- td {
+ table, th, td {
      border: 2px solid black;
+     border-collapse: collapse;
+     padding: 10px;
  }
 
- .nav a{
+ .nav a, input[type=submit]{
     background: black;
     border: 1px solid black;
     color: white;
     display: inline-block;
     text-decoration: none;
     padding: 14px;
+    font-family: copperplate;
+    font-size: 20px; 
  }
 
  a {
@@ -69,13 +75,38 @@ body {
      padding: 20px;
      margin-left: 20px;
      margin-right: 20px;
-     margin-top: 50px;
+     margin-top: 40px;
      opacity: 0.8;
      border: 3px solid black;
     }
 
-#welcome {
+.welcome {
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+}
+
+label {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.current {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.search input[type=submit] {
+    background: black;
+    border: 1px solid black;
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px;
+    font-family: copperplate;
+    font-size: 20px; 
 }

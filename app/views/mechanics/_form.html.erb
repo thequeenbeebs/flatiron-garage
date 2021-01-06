@@ -1,21 +1,21 @@
 <%= form_for @mechanic do |f| %>
     <p>
-        <%= f.label :name %><br>
+        <%= f.label "Name:" %><br>
         <%= f.text_field :name %>
     </p>
     <p>
-        <%= f.label :years_experience %><br>
+        <%= f.label "Years of Experience:" %><br>
         <%= f.number_field :years_experience %>
     </p>
     <p>
-        <%= f.label :hire_date %></br>
+        <%= f.label "Hire Date:" %></br>
         <%= f.text_field :hire_date %>
     </p>
     <p>
-        <%= f.label :hourly_price %><br>
+        <%= f.label "Hourly Rate:" %><br>
         <%= f.text_field :hourly_price %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit "Submit" %>
     </p>
 <% end %>

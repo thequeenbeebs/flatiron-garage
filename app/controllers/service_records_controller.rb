@@ -12,6 +12,8 @@ class ServiceRecordsController < ApplicationController
 
     def new
         @service_record = ServiceRecord.new
+        @service_record.parts.build
+        @car_options = Car.all.map { |car| "#{car.owner.name} - #{car.make} #{car.model}"}
     end
 
     def create
@@ -48,6 +50,6 @@ class ServiceRecordsController < ApplicationController
     private
 
     def service_record_params
-        params.require(:service_record).permit(:car_id, :service_id, :mechanic_id, :date_of_service, :labor_hours, :note)
+        params.require(:service_record).permit(:car_id, :service_id, :mechanic_id, :date_of_service, :labor_hours, :note, :parts_attributes)
     end
 end

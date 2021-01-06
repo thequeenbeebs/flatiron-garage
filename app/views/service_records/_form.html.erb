@@ -1,29 +1,43 @@
 <%= form_for @service_record do |f| %>
     <p>
-        <%= f.label :date_of_service %><br>
-        <%= f.text_field :date_of_service %>
+        <%= f.label "Date of Service:" %><br>
+        <%= f.date_field :date_of_service %>
+    <p>
+        <%= f.label "Customer/Vehicle:" %><br>
+        <%= f.select :car_id, @car_options.sort %>
     </p>
     <p>
-        <%= f.label :car_id %><br>
-        <%= f.collection_select :car_id, Car.all, :id, :model %>
-    </p>
-    <p>
-        <%= f.label :service_id %><br>
+        <%= f.label "Service:" %><br>
         <%= f.collection_select :service_id, Service.all, :id, :service_description %>
     </p>
     <p>
-        <%= f.label :mechanic_id %><br>
+        <%= f.label "Mechanic:" %><br>
         <%= f.collection_select :mechanic_id, Mechanic.all, :id, :name %>
     </p>
     <p>
-        <%= f.label :labor_hours %><br>
+        <%= f.label "Total Labor Hours:" %><br>
         <%= f.number_field :labor_hours %>
     </p>
     <p>
-        <%= f.label :note %><br>
+        <%= f.label "Parts Needed:" %><br>
+        <% 3.times do %>
+        <p>
+        <%= f.fields_for :parts do |part| %>
+            <%= part.label "Number:" %>
+            <%= part.text_field :number %>
+            <%= part.label "Description:" %>
+            <%= part.text_field :description %>
+            <%= part.label "Price:" %>
+            <%= part.text_field :price %>
+        <% end %>
+        </p>
+        <% end %>
+    </p>
+    <p>
+        <%= f.label "Note:" %><br>
         <%= f.text_field :note %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit "Submit" %>
     </p>
 <% end %>

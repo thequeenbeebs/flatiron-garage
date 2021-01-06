@@ -1,20 +1,22 @@
 <%= form_for @car do |f| %>
     <p>
-       <%= f.label :make %><br>
+       <%= f.label "Make:" %><br>
        <%= f.text_field :make %> 
     </p>
     <p>
-       <%= f.label :model %><br>
+       <%= f.label "Model:" %><br>
        <%= f.text_field :model %> 
     </p>
     <p>
-       <%= f.label :year %><br>
+       <%= f.label "Year:" %><br>
        <%= f.text_field :year %> 
     </p>
     <p>
        <%= f.hidden_field :owner_id %><br>
+       <%= f.label "Currently In Garage" %>
+       <%= f.check_box :in_garage %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit "Submit" %>
     </p>
 <% end %>

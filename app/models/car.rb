@@ -9,4 +9,10 @@ class Car < ApplicationRecord
     belongs_to :owner
     has_many :service_records
     has_many :services, through: :service_records
+
+    def self.cars_in_garage
+        Car.all.select do |car|
+            car.in_garage == true
+        end
+    end
 end

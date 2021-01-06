@@ -1,5 +1,9 @@
 <h2>Vehicle</h2>
 
+<% if @car.in_garage == true %>
+<h3>CURRENTLY IN GARAGE</h3>
+<% end %>
+
 <h3>Owner:</h3>
 <%= link_to @car.owner.name, owner_path(@car.owner) %>
 

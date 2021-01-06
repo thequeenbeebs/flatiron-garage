@@ -1,13 +1,13 @@
 <%= form_for @service do |f| %>
     <p>
-        <%= f.label :service_description %><br>
+        <%= f.label "Service Description:" %><br>
         <%= f.text_field :service_description %>
     </p>
     <p>
-        <%= f.label :labor_estimate %><br>
+        <%= f.label "Labor Estimate:" %><br>
         <%= f.number_field :labor_estimate %>
     </p>
     <p>
-        <%= f.submit %>
+        <%= f.submit "Submit" %>
     </p>
 <% end %>

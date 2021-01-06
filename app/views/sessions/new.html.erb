@@ -1,17 +1,25 @@
-<h2> Login </h2>
+<h2> Log In </h2>
 
 <% if flash[:errors] %>
-<li style = "color:orange">
-<%= flash[:errors]%>
-</li>
+    <% flash[:errors].each do |error|%>
+        <li style = "color:red">
+        <%= error %>
+        </li>
+    <% end %>
 <% end %>
 
 <%= form_for (@user), :url => "/login" do |f| %>
-<p>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit  "Log In"%>
+  <p>
+    <%= f.label "Username:" %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label "Password:" %><br>
+    <%= f.password_field :password %>
+  </p>
+  <br>
+  <p>
+    <%= f.submit  "Log In"%>
+  </p>
   <% end %>
 </p>

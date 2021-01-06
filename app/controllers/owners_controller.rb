@@ -3,7 +3,7 @@ class OwnersController < ApplicationController
     before_action :require_login
     
     def index
-        @owners = Owner.all
+        @owners = Owner.search(params[:search])
     end
 
     def show
@@ -48,6 +48,6 @@ class OwnersController < ApplicationController
     private
 
     def owner_params
-        params.require(:owner).permit(:name, :email, :street_address, :city, :state, :zip_code)
+        params.require(:owner).permit(:name, :email, :street_address, :city, :state, :zip_code, :phone_number, :search)
     end
 end
