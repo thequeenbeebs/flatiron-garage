@@ -6,7 +6,28 @@
   <body>
     <h1>Thanks for using Flatiron Garage, <%= @owner.name %></h1>
     <p>
-      Invoice fields
+      Date of service: <%= @service_record.date_of_service%><br><br>
+      <%= @owner.name %><br>
+      <%= @owner.street_address %><br>
+      <%= @owner.city %>, <%= @owner.state %> <%= @owner.zip_code %><br><br>
+
+      <%= @service_record.car.year %>, <%= @service_record.car.make %>, <%= @service_record.car.model%><br>
+      Mechanic: <%= @service_record.mechanic.name%><br>
+      Labor: <%= @service_record.labor_hours %> hours <br><br>
+      Work Done: <%= @service_record.service.service_description %><br><br>
+      Parts:<br>
+          Number:<br>
+          Description:<br>
+          Price:<br><br>
+
+      Notes:<br>
+      <%= @service_record.note %>
+
+
+     
+    
+
+
     </p>
     <p>
       If there any questions, please call us at 800.555.1212.
