@@ -26,7 +26,7 @@
           <% @service_record.parts.each do |part| %>
            <td><%= part.number %></td>
            <td><%= part.description %></td>
-           <td>$<%= part.price %></td>
+           <td><%= format("$%.2f",part.price) %></td>
         <tr>
         </table><br>
           <% end %>
@@ -35,9 +35,9 @@
       <%= @service_record.note %><br><br>
 
       Total Invoice:<br>
-      $<%= @service_record.total_cost %><br>
+      <%= format("$%.2f",@service_record.total_cost) %><br>
       Total Paid:<br>
-      $<%= @service_record.total_cost %><br>
+      <%= format("$%.2f",@service_record.total_cost) %><br>
       Balance Due:<br>
       $ 0.00
 
