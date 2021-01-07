@@ -55,6 +55,17 @@ srvrcd4 = ServiceRecord.create(car_id: car2.id, service_id: srv4.id, mechanic_id
 part4 = Part.create(service_record_id: srvrcd4.id, number: 215798, description: "Manual Transmission Filter", price: 25)
 srvrcd5 = ServiceRecord.create(car_id: car3.id, service_id: srv7.id, mechanic_id: mech3.id, date_of_service: "2020-07-22", labor_hours: 4, note: "Nice car - Radiator had a hole in it")
 part5 = Part.create(service_record_id: srvrcd5.id, number: 19208, description: "Ferrari Radiator", price: 300)
+srvrcd6 = ServiceRecord.create(car_id: car4.id, service_id: srv8.id, mechanic_id: mech4.id, date_of_service: "2020-09-22", labor_hours: 2, note: "Nice car - Radiator had a hole in it")
+part6 = Part.create(service_record_id: srvrcd6.id, number: 19208, description: "Ferrari Radiator", price: 300)
+srvrcd7 = ServiceRecord.create(car_id: car5.id, service_id: srv9.id, mechanic_id: mech5.id, date_of_service: "2020-07-18", labor_hours: 1, note: "Nice car - Radiator had a hole in it")
+part7 = Part.create(service_record_id: srvrcd7.id, number: 19208, description: "Ferrari Radiator", price: 300)
+srvrcd8 = ServiceRecord.create(car_id: car6.id, service_id: srv10.id, mechanic_id: mech1.id, date_of_service: "2020-06-13", labor_hours: 5, note: "Nice car - Radiator had a hole in it")
+part8 = Part.create(service_record_id: srvrcd8.id, number: 19208, description: "Ferrari Radiator", price: 300)
+srvrcd9 = ServiceRecord.create(car_id: car7.id, service_id: srv1.id, mechanic_id: mech2.id, date_of_service: "2020-08-24", labor_hours: 3, note: "Nice car - Radiator had a hole in it")
+part9 = Part.create(service_record_id: srvrcd9.id, number: 19208, description: "Ferrari Radiator", price: 300)
+srvrcd10 = ServiceRecord.create(car_id: car1.id, service_id: srv2.id, mechanic_id: mech3.id, date_of_service: "2020-01-01", labor_hours: 1, note: "Nice car - Radiator had a hole in it")
+part10 = Part.create(service_record_id: srvrcd10.id, number: 19208, description: "Ferrari Radiator", price: 300)
+
 
 #create owners and their cars
 10.times do 
