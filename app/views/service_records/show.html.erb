@@ -28,7 +28,7 @@
 <h3>Parts:</h3>
 <ul>
     <% @service_record.parts.each do |part| %>
-        <li><%= link_to part.description, part_path(part) %> - $<%= part.price %></li>
+        <li><%= link_to part.description, part_path(part) %> - <%= format("$%.2f",part.price) %></li>
     <% end %>
 </ul>
 
@@ -36,7 +36,7 @@
 <p><%= @service_record.note %></p>
 
 <h3>Total Cost:</h3>
-<p>$<%= @service_record.total_cost %></p>
+<p><%= format("$%.2f",@service_record.total_cost) %></p>
 
 <br>
 
