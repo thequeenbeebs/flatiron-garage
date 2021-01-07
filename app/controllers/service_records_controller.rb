@@ -1,5 +1,5 @@
 class ServiceRecordsController < ApplicationController
-    
+    helper_method :params
     before_action :require_login
     
     def index
