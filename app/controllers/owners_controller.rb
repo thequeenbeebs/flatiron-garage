@@ -20,7 +20,6 @@ class OwnersController < ApplicationController
            @owner.save
            redirect_to owner_path(@owner)
         else
-          flash[:errors] = @owner.errors.full_messages
           render :new
         end
     end
@@ -34,7 +33,6 @@ class OwnersController < ApplicationController
         if @owner.update(owner_params)
           redirect_to owner_path(@owner)
         else
-          flash[:errors] = @owner.errors.full_messages
           render :edit
         end
     end

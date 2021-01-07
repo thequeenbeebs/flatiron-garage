@@ -110,3 +110,7 @@ label {
     font-family: copperplate;
     font-size: 20px; 
 }
+
+.error_explanation {
+    color: red;
+}

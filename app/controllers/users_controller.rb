@@ -18,8 +18,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      flash[:errors] = @user.errors.full_messages
-      redirect_to signup_path
+      render :new
     end
   end
 
@@ -35,7 +34,6 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
-      flash[:errors] = @user.errors.full_messages
       render :edit
     end
   end

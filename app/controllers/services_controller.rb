@@ -16,7 +16,6 @@ class ServicesController < ApplicationController
             @service.save
             redirect_to services_path
         else
-            flash[:errors] = @service.errors.full_messages
             render :new
         end
     end
@@ -30,7 +29,6 @@ class ServicesController < ApplicationController
         if @service.update(service_params)
             redirect_to service_path(@service)
         else
-            flash[:errors] = @service.errors.full_messages
             render :edit
         end
     end

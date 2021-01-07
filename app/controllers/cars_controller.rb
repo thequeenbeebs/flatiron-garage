@@ -16,7 +16,6 @@ class CarsController < ApplicationController
             @car.save
             redirect_to car_path(@car)
         else
-            flash[:errors] = @car.errors.full_messages
             render :new
         end      
     end
@@ -30,7 +29,6 @@ class CarsController < ApplicationController
         if @car.update(car_params)
             redirect_to car_path(@car)
         else
-            flash[:errors] = @car.errors.full_messages
             render :edit
         end
     end
