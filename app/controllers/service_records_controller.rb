@@ -1,9 +1,13 @@
 class ServiceRecordsController < ApplicationController
-    helper_method :params
     before_action :require_login
     
     def index
-        @service_records = ServiceRecord.all.order("date_of_service DESC")
+        if !params[:mechanic].blank?
+            @service_records = ServiceRecord.by_mechanic(params[:mechanic]) 
+        else
+            @service_records = ServiceRecord.all.order("date_of_service DESC")
+        end
+        @mechanics = Mechanic.all
     end
 
     def show

@@ -18,4 +18,8 @@ class ServiceRecord < ApplicationRecord
         labor = self.labor_hours * self.mechanic.hourly_price
         parts + labor
     end
+
+    def self.by_mechanic(mechanic_id)
+        where(mechanic: mechanic_id)
+      end 
 end
