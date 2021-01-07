@@ -39,7 +39,9 @@ class OwnersController < ApplicationController
 
     def destroy
         @owner = Owner.find(params[:id])
+        @cars = @owner.cars
         @owner.destroy
+        @cars.each {|car| car.destroy}
         redirect_to owners_path
     end
 

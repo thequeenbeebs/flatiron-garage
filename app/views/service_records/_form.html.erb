@@ -12,7 +12,7 @@
 <%= form_for @service_record do |f| %>
     <p>
         <%= f.label "Date of Service:" %><br>
-        <%= f.date_field :date_of_service %>
+        <%= f.date_field :date_of_service, :value => @service_record.date_of_service %>
     <p>
         <%= f.label "Customer/Vehicle:" %><br>
         <%= f.select(:car_id, Car.car_options) %>

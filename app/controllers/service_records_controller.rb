@@ -59,7 +59,9 @@ class ServiceRecordsController < ApplicationController
 
     def destroy
         @service_record = ServiceRecord.find(params[:id])
+        @parts = @service_record.parts
         @service_record.destroy
+        @parts.each {|part| part.destroy}
         redirect_to service_records_path
     end
 
