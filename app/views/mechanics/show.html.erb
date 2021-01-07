@@ -14,7 +14,7 @@
 <%= @mechanic.hire_date %>
 
 <h3>Hourly Rate:</h3>
-<%= @mechanic.hourly_price %>
+<%= format("$%.2f/hr",@mechanic.hourly_price) %>
 
 <h3>Service Records:</h3>
 <ul>
