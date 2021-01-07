@@ -15,10 +15,21 @@
       Mechanic: <%= @service_record.mechanic.name%><br>
       Labor: <%= @service_record.labor_hours %> hours <br><br>
       Work Done: <%= @service_record.service.service_description %><br><br>
-      Parts:<br>
-          Number:<br>
-          Description:<br>
-          Price:<br><br>
+      Parts:
+      <table border = 1>
+        <tr>
+          <th>Number</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <% @service_record.parts.each do |part| %>
+           <td><%= part.number %></td>
+           <td><%= part.description %></td>
+           <td>$<%= part.price %></td>
+        <tr>
+        </table><br>
+          <% end %>
 
       Notes:<br>
       <%= @service_record.note %><br><br>
