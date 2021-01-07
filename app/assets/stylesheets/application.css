@@ -114,3 +114,7 @@ label {
 .error_explanation {
     color: red;
 }
+
+#parts {
+    margin-left: 30px;
+}

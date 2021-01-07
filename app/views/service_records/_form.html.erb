@@ -30,19 +30,23 @@
         <%= f.number_field :labor_hours %>
     </p>
     <p>
-        <%= f.label "Parts Needed:" %><br>
-        <% 3.times do %>
-        <p>
+        <%= f.label "Part Needed:" %><br>
+        <div id="parts">
         <%= f.fields_for :parts do |part| %>
-            <%= part.label "Number:" %>
-            <%= part.text_field :number %>
-            <%= part.label "Description:" %>
-            <%= part.text_field :description %>
-            <%= part.label "Price:" %>
-            <%= part.text_field :price %>
+            <p>
+                <%= part.label "Number:" %><br>
+                <%= part.text_field :number %>
+            </p>
+            <p>
+                <%= part.label "Description:" %><br>
+                <%= part.text_field :description %>
+            </p>
+            <p>
+                <%= part.label "Price:" %><br>
+                <%= part.text_field :price %>
+            </p>
         <% end %>
-        </p>
-        <% end %>
+        </div>
     </p>
     <p>
         <%= f.label "Note:" %><br>
