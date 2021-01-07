@@ -4,7 +4,7 @@
         <%= f.date_field :date_of_service %>
     <p>
         <%= f.label "Customer/Vehicle:" %><br>
-        <%= f.select :car_id, @car_options.sort %>
+        <%= f.select(:car_id, Car.car_options) %>
     </p>
     <p>
         <%= f.label "Service:" %><br>

@@ -15,4 +15,8 @@ class Car < ApplicationRecord
             car.in_garage == true
         end
     end
+
+    def self.car_options
+        Car.all.map { |car| ["#{car.owner.name} - #{car.make} #{car.model}", car.id]}
+    end
 end
