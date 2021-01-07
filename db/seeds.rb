@@ -56,7 +56,7 @@ part4 = Part.create(service_record_id: srvrcd4.id, number: 215798, description: 
 srvrcd5 = ServiceRecord.create(car_id: car3.id, service_id: srv7.id, mechanic_id: mech3.id, date_of_service: "07/22/2020", labor_hours: 4, note: "Nice car - Radiator had a hole in it")
 part5 = Part.create(service_record_id: srvrcd5.id, number: 19208, description: "Ferrari Radiator", price: 300)
 
-#create owners
+#create owners and their cars
 10.times do 
     name = Faker::Name.name
     email = Faker::Internet.email
@@ -66,5 +66,9 @@ part5 = Part.create(service_record_id: srvrcd5.id, number: 19208, description: "
     state = Faker::Address.state
     zip_code = Faker::Address.zip_code
     owner = Owner.create(name: name, email: email, phone_number: phone_number, street_address: street_address, city: city, state: state, zip_code: zip_code)
+    make = Faker::Vehicle.make
+    model = Faker::Vehicle.model
+    year = Faker::Vehicle.year
+    Car.create(make: make, model: model, year: year, owner_id: owner.id)
 end
 
