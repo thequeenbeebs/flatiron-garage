@@ -3,7 +3,7 @@ class ServiceRecordsController < ApplicationController
     before_action :require_login
     
     def index
-        @service_records = ServiceRecord.all
+        @service_records = ServiceRecord.all.order("date_of_service DESC")
     end
 
     def show
