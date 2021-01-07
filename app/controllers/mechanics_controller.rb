@@ -20,7 +20,6 @@ class MechanicsController < ApplicationController
             @mechanic.save
             redirect_to mechanic_path(@mechanic)
         else
-            flash[:errors] = @mechanic.errors.full_messages
             render :new
         end
     end
@@ -34,7 +33,6 @@ class MechanicsController < ApplicationController
         if @mechanic.update(mechanic_params)
             redirect_to mechanic_path(@mechanic)
         else
-            flash[:errors] = @mechanic.errors.full_messages
             render :edit
         end
     end

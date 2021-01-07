@@ -36,7 +36,6 @@ class ServiceRecordsController < ApplicationController
               end
             
         else
-            flash[:errors] = @service_record.errors.full_messages
             render :new
         end
     end
@@ -50,7 +49,6 @@ class ServiceRecordsController < ApplicationController
         if @service_record.update(service_record_params)
             redirect_to service_record_path(@service_record)
         else
-            flash[:errors] = @service_record.errors.full_messages
             render :edit
         end
     end

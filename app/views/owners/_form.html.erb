@@ -1,3 +1,14 @@
+<% if @owner.errors.any? %>
+   <div class="error_explanation">
+      <h3>ERROR:</h3>
+      <ul>
+         <% @owner.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+         <% end %>
+      </ul>
+   </div>
+<% end %>
+
 <%= form_for @owner do |f| %>
     <p>
         <%= f.label "Name:" %><br>

@@ -1,4 +1,13 @@
-<h2>Part</h2>
+<h2>Part
+
+<div class="footer">
+
+        <%= link_to "Edit Part", edit_service_record_part_path(@part) %>
+        <%= link_to "Delete Part", @part, method: :delete %>
+        <%= link_to "Back to Service Record", service_record_path(@part.service_record)%>
+</div>
+
+</h2>
 
 <h3>Number:</h3>
 <%= @part.number %>
@@ -11,10 +20,3 @@ $<%= @part.price %>
 
 <br>
 
-<div class="footer">
-    <p>
-        <%= link_to "Edit Part", edit_service_record_part_path(@part) %>
-        <%= link_to "Delete Part", @part, method: :delete %>
-        <%= link_to "Back to Service Record", service_record_path(@part.service_record)%>
-    </p>
-</div>

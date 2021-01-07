@@ -16,7 +16,6 @@ class PartsController < ApplicationController
             @part.save
             redirect_to part_path(@part)
         else
-            flash[:errors] = @part.errors.full_messages
             render :new
         end
     end
@@ -30,7 +29,6 @@ class PartsController < ApplicationController
         if @part.update(part_params)
             redirect_to part_path(@part)
         else
-            flash[:errors] = @part.errors.full_messages
             render :edit
         end
     end

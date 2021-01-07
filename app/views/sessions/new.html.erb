@@ -1,11 +1,9 @@
 <h2> Log In </h2>
 
 <% if flash[:errors] %>
-    <% flash[:errors].each do |error|%>
-        <li style = "color:red">
-        <%= error %>
-        </li>
-    <% end %>
+   <div class="error_explanation">
+      <h3>ERROR: <%= flash[:errors] %></h3>
+   </div>
 <% end %>
 
 <%= form_for (@user), :url => "/login" do |f| %>
