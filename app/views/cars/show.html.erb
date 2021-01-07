@@ -1,4 +1,11 @@
-<h2>Vehicle</h2>
+<h2>Vehicle
+
+<div class="footer">  
+        <%= link_to "Edit Vehicle", edit_owner_car_path(@car) %>
+        <%= link_to "Delete Vehicle", @car, method: :delete %> 
+<div>
+
+</h2>
 
 <% if @car.in_garage == true %>
 <h3>CURRENTLY IN GARAGE</h3>
@@ -25,7 +32,3 @@
 
 <br>
 
-<div class="footer">  
-        <%= link_to "Edit Vehicle", edit_owner_car_path(@car) %>
-        <%= link_to "Delete Vehicle", @car, method: :delete %> 
-<div>

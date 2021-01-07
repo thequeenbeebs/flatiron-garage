@@ -1,8 +1,9 @@
+<h2><div class="footer">
+    <%= link_to "Edit User", edit_user_path(@user) %>
+    <%= link_to "Delete User", @user, method: :delete %>
+</div></h2>
+
 <br>
 
 <h3> Username: <%= @user.username %></h3>
 
-<div class="footer">
-    <%= link_to "Edit User", edit_user_path(@user) %>
-    <%= link_to "Delete User", @user, method: :delete %>
-</div>

@@ -1,4 +1,12 @@
-<h2>Customer</h2>
+<h2>Customer
+
+<div class='footer'>
+    <%= link_to "Add a Vehicle", new_owner_car_path(@owner) %>
+    <%= link_to "Edit Customer", edit_owner_path(@owner) %>
+    <%= link_to "Delete Customer", @owner, method: :delete %>
+</div>
+
+</h2>
 
 <h3>Name:</h3>
 <%= @owner.name %>
@@ -22,8 +30,3 @@
 
 <br>
 
-<div class='footer'>
-    <%= link_to "Add a Vehicle", new_owner_car_path(@owner) %>
-    <%= link_to "Edit Customer", edit_owner_path(@owner) %>
-    <%= link_to "Delete Customer", @owner, method: :delete %>
-</div>

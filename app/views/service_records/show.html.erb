@@ -1,4 +1,11 @@
-<h2>Service Record</h2>
+<h2>Service Record
+
+<div class="footer">
+    <%= link_to "Add a Part", new_service_record_part_path(@service_record) %>
+    <%= link_to "Edit Service Record", edit_service_record_path(@service_record) %>
+    <%= link_to "Delete Service Record", @service_record, method: :delete %>
+</div>
+</h2>
 
 <h3>Date of Service:</h3>
 <%= @service_record.date_of_service %>
@@ -33,8 +40,3 @@
 
 <br>
 
-<div class="footer">
-    <%= link_to "Add a Part", new_service_record_part_path(@service_record) %>
-    <%= link_to "Edit Service Record", edit_service_record_path(@service_record) %>
-    <%= link_to "Delete Service Record", @service_record, method: :delete %>
-</div>
