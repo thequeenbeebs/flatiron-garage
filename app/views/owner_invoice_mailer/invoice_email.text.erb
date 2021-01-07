@@ -1,7 +1,41 @@
 
     Thanks for using Flatiron Garage, <%= @owner.name %>
    ===========================================================
-    Invoice fields
+   
+   Date of service: <%= @service_record.date_of_service %>
+
+   <%= @owner.name %>
+   <%= @owner.street_address %>
+   <%= @owner.city %>, <%= @owner.state %> <%= @owner.zip_code %>
+
+   <%= @service_record.car.year %>, <%= @service_record.car.make %>, <%= @service_record.car.model%>   
+
+   Mechanic: <%= @service_record.mechanic.name%>
+   Labor: <%= @service_record.labor_hours %> hours 
+   Work Done: <%= @service_record.service.service_description %>
+
+   Parts:
+        Number:
+        Description:
+        Price:
+
+    Notes:
+        <%= @service_record.note %>
+
+    Total Invoice:
+        $<%= @service_record.total_cost %>
+
+    Total Paid:
+        $<%= @service_record.total_cost %>
+
+    Balance Due:
+        $ 0.00
+
+      We appreciate your business!
+   
+      If there any questions, please call us at 800.555.1212.
+    
+      Have a great day!
     
     If there any questions, please call us at 800.555.1212.
 
