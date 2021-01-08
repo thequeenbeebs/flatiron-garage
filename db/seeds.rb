@@ -83,3 +83,5 @@ part10 = Part.create(service_record_id: srvrcd10.id, number: 19208, description:
     Car.create(make: make, model: model, year: year, owner_id: owner.id)
 end
 
+scott = Owner.create(name: "Scott Lee", email: "scotthlee.mail@gmail.com", phone_number: "123-456-7890", street_address: "1600 Pennsylvania Avenue", city: "Washington", state: "DC", zip_code: 12345)
+Car.create(owner_id: scott.id, make: "Chevrolet", model: "Colorado", year: 2018)
