@@ -2,6 +2,7 @@ class ServiceRecord < ApplicationRecord
     
     validates :date_of_service, presence: true
     validates :labor_hours, presence: true
+    validates :labor_hours, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
     validates_length_of :note, :maximum => 250
     
     has_many :parts
